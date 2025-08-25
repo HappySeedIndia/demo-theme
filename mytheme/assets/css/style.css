@@ -1,0 +1,33 @@
+/* Css */
+html {
+  scroll-behavior: smooth;
+}
+
+ul {
+  list-style-type: none;
+}
+
+#block-mytheme-primary-local-tasks ul {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-left: 0;
+}
+
+#block-mytheme-primary-local-tasks ul li {
+  margin-right: 10px;
+}
+
+.breadcrumbs ul li::after {
+  content: '>';
+}
+
+.breadcrumbs ul li:last-child::after {
+  display: none;
+}
+
+#block-mytheme-site-branding a {
+    display: block;
+    width: 40px;
+    height: auto;
+}

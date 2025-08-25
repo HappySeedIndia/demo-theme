@@ -1,0 +1,41 @@
+{% set classes = [
+    'blog-article',
+    'py-3',
+  ]
+%}
+<article{{ attributes.addClass(classes) }}>
+
+  <div class="container">
+    {# Image #}
+    <div class="blog-image">
+      {{ content.field_blog_image }}
+    </div>
+
+    {# Title #}
+    {{ title_prefix }}
+      <h1{{ title_attributes }}>
+        {{ label }}
+      </h1>
+    {{ title_suffix }}
+
+    {# Date #}
+    <div class="py-3">
+      <strong>{{ content.field_blog_date }}</strong>
+    </div>
+
+    {# Description #}
+    <div class="pb-3">
+      {{ content.field_blog_description }}
+    </div>
+
+    {# Author #}
+    {% if display_submitted %}
+    <div class="bog-author">
+      <div{{ author_attributes }}>
+        {% trans %}Authored by {{ author_name }} {% endtrans %}
+      </div>
+    </div>
+  {% endif %}
+  </div>
+
+</article>

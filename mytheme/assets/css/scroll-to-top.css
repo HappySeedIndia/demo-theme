@@ -1,0 +1,32 @@
+#back-to-top {
+  position: fixed;
+  bottom: 50px;
+  right: 30px;
+  z-index: 999;
+  width: 40px;
+  height: 40px;
+  background-color: #333;
+  color: white;
+  text-align: center;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .3s, visibility .3s;
+}
+
+#back-to-top.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+#back-to-top:hover {
+  background-color: #555;
+}
+
+#back-to-top svg {
+  width: 20px;
+  height: 20px;
+}

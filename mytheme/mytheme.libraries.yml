@@ -1,0 +1,39 @@
+bootstrap:
+  css:
+    theme:
+      //cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css: {attributes: { crossorigin: anonymous }, type: external }
+  js:
+    //cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js: {attributes: { crossorigin: anonymous }, type: external}
+    //cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.min.js: {attributes: { crossorigin: anonymous }, type: external }
+  dependencies:
+    - core/jquery
+
+global-styling:
+  css:
+    theme:
+      assets/css/style.css: {}
+
+global-scripts:
+  js: 
+    assets/js/theme.js: {}
+  dependencies:
+    - core/jquery
+
+owl-carousel:
+  css:
+    theme:
+      assets/plugins/owl-carousel/owl.carousel.min.css: {minified: true }
+  js:
+    assets/plugins/owl-carousel/owl.carousel.min.js: {minified: true }
+  dependencies:
+    - core/jquery
+
+scroll-to-top:
+  css:
+    theme:
+      assets/css/scroll-to-top.css: {}
+  js:
+    assets/js/scroll-to-top.js: {}
+  dependencies:
+    - core/jquery
+    - core/once
