@@ -1,16 +1,32 @@
 # Name required
 name: Mytheme
+
 # type (required)
 type: theme
+
 # Description Optional
 description: 'A custom theme.'
+
 # core_version_requirement (required)
 # Allows themes to specify that they are compatible with multiple major versions of Drupal core.
 core_version_requirement: '^11'
+
+# base theme (required)
 # A theme can inherit the resources from another theme by specifying it as a base theme. 
 # It is recommended to use stable9. 
 # If set to false, no base theme is being used. 
 base theme: false
+
+# logo (optional)
+# By default, Drupal will look for a file named "logo.svg" in the root of your theme folder 
+# and use that as the theme's logo.
+# else you need to define other logo extensions like below
+# logo: images/logo.png
+
+# screenshot (optional)
+# Screenshots should be 588 pixels wide and 438 pixels high
+screenshot: screenshot.png
+
 # regions (optional) - A list of theme regions.
 # A content region is required.
 # Drupal Default regions
@@ -28,12 +44,16 @@ base theme: false
 
 regions:
   header: 'Header'
+  breadcrumb: 'Breadcrumb'
+  default_blocks: 'Drupal default blocks (dispalyed for admin users)'
   content: 'Content'
   sidebar_first: 'Sidebar first'
   footer: 'Footer'
+
 # by adding global-styling and global-scripts here, the css/js files in the library become 
 # available to every page presented by the theme
 libraries:
   - mytheme/bootstrap
   - mytheme/global-styling
   - mytheme/global-scripts
+

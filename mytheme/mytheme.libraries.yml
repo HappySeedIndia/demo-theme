@@ -1,3 +1,17 @@
+# libraries load alphabetically
+
+# Lower weight = earlier processing/display and Higher weight = later processing/display.
+
+# While individual assets within a library can be weighted, 
+# the overall order in which libraries themselves are loaded can also be 
+# influenced by the weight assigned to the library within its definition.
+
+# Module styles are always loaded before theme styles
+
+# Min and max values: Documentation suggests using a numeric value 
+# between -50 and 50 for manual weight overrides.
+
+# Bootstrap Files
 bootstrap:
   css:
     theme:
@@ -8,17 +22,20 @@ bootstrap:
   dependencies:
     - core/jquery
 
+# Theme speicfic global CSS
 global-styling:
   css:
     theme:
       assets/css/style.css: {}
 
+# Theme speicfic global JS
 global-scripts:
   js: 
     assets/js/theme.js: {}
   dependencies:
     - core/jquery
 
+# Owl Carousel Files
 owl-carousel:
   css:
     theme:
@@ -28,6 +45,7 @@ owl-carousel:
   dependencies:
     - core/jquery
 
+# Scroll to top Files
 scroll-to-top:
   css:
     theme:
