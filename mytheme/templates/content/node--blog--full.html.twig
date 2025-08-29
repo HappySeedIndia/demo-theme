@@ -7,9 +7,11 @@
 
   <div class="container">
     {# Image #}
+    {% if content.field_blog_image|render %}
     <div class="blog-image">
       {{ content.field_blog_image }}
     </div>
+    {% endif %}
 
     {# Title #}
     {{ title_prefix }}

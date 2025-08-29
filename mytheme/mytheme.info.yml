@@ -36,3 +36,4 @@ regions:
 libraries:
   - mytheme/bootstrap
   - mytheme/global-styling
+  - mytheme/global-scripts
