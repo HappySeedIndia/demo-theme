@@ -1,0 +1,18 @@
+$schema: https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json
+name: Mytheme Text
+status: experimental
+description: Text
+props:
+  type: object
+  properties:
+    content:
+      type: string
+      title: Content
+      description: Text
+      default: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      examples:
+        - Vivamus lobortis eleifend elit sit amet pharetra. Mauris blandit vestibulum ultrices. Nam pulvinar auctor urna, at gravida dolor.
+    extraClasses:
+      type: string
+      title: Extra Css Classes
+      default: mb-4

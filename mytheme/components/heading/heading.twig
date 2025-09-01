@@ -1,0 +1,35 @@
+
+{#
+/**
+ * @file
+ * Heading component.
+ *
+ * Available properties:
+ * - title: Heading text.
+ * - html_tag : The HTML tag to use for the header.
+ *             Defaults to h1 (h1|h2|h3|h4|h5|h6)
+ * - headingLink: Simple URL link for heading.
+ * - extraClasses: An array of utility classes that can be used to add extra
+ *                    Bootstrap utility classes or custom classes to this component.
+ * - headingIcon: Simple icon for heading.
+ * - iconPosition: Icon position i.e. before or after heading title
+ *
+ */
+#}
+{% set attributes = attributes is defined ? attributes : create_attribute() %}
+
+{% if headingLink is not empty %}
+  <a href="{{ headingLink }}">
+{% endif %}
+  <{{ html_tag|default('h2') }}{{ attributes.addClass(extraClasses|default([])) }}>
+    {% if headingIcon and iconPosition == 'left' %}
+      <i class="{{ headingIcon }}"></i>
+    {% endif %}
+    {{ title }}
+    {% if headingIcon and iconPosition == 'right' %}
+      <i class="{{ headingIcon }}"></i>
+    {% endif %}
+  </{{ html_tag|default('h2') }}>
+{% if headingLink is not empty %}
+  </a>
+{% endif %}

@@ -1,0 +1,57 @@
+$schema: https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json
+name: Mytheme Card
+status: experimental
+description: 'Card component with media at the side.'
+group: Cards
+props:
+  type: object
+  properties:
+    card_border:
+      type: boolean
+      title: 'Card Border'
+      description: 'Add a default padding to the card.'
+      default: true
+    padded:
+      type: boolean
+      title: 'Padded'
+      description: 'Add a default padding to the card.'
+      default: false
+    equal_height:
+      type: boolean
+      title: 'Equal height'
+      default: true
+    media_position:
+      type: string
+      title: 'Media position'
+      description: 'Choose the location of the media from (top|bottom).'
+      default: top
+      enum:
+        - top
+        - bottom
+    card_classes:
+      type: string
+      title: 'Utility Classes'
+      description: 'Use to add extra Bootstrap utility classes for the main Card wrapper. E.g. `mb-3 shadow-lg` ( Do not add `card`).' 
+    card_media_classes:
+      type: string
+      title: 'Media Utility Classes'
+      description: 'Use to add extra Bootstrap utility classes for the Card Media region wrapper. E.g. `bg-secondary mb-3` ( Do not add `card-img`).'
+    card_content_classes:
+      type: string
+      title: Content Utility Classes
+      description: Use to add extra Bootstrap utility classes for the Card Content region wrapper. E.g. `w-75 mb-3 overflow-y-hidden`  ( Do not add `card-body`).'
+slots:
+  # The key is the name of the slot. In your template you will use 
+  # {% block media %}.
+  media:
+    # A human-readable name.
+    title: 'Card Media'
+    # A description.
+    description: 'The media image/video slot for the card.'
+    examples:
+      - <p>This is Media section, you can place Image component in this section.</p>
+  content:
+    title: 'Card Content'
+    description: 'The content slot for the card.'
+    examples:
+      - <p>This is Content section, you can place Heading, Text, Button, Badge components in this section.</p>

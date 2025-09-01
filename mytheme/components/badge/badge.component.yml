@@ -1,0 +1,49 @@
+$schema: https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json
+name: Mytheme Badge
+status: experimental
+description: Documentation and examples for badges, our small count and labeling component.
+props:
+  type: object
+  properties:
+    title:
+      type: string
+      title: Badge Text
+      default: New
+      examples:
+        - New
+    html_tag:
+      type: string
+      title: The HTML tag to use for the bade. Defaults to span.
+      default: span
+      enum:
+        - span
+        - div
+        - a
+      examples:
+        - span
+    url:
+      type: string
+      title: URL Link
+      description: URL link for Badge when the HTML tag is an anchor link.
+    color:
+      type: string
+      title: Background and Text Color
+      description: Set a background-color with contrasting foreground color with our .text-bg-{color} helpers. Previously it was required to manually pair your choice of .text-{color} and .bg-{color} utilities for styling, which you still may use if you prefer.
+      default: warning
+      enum:
+        - primary
+        - secondary
+        - success
+        - info
+        - warning
+        - danger
+        - light
+        - dark
+      examples:
+        - warning
+    extraClasses:
+      type: string
+      title: Extra Css Classes
+      default: mb-6
+      examples:
+        - mb-6

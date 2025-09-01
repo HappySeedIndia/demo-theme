@@ -1,0 +1,70 @@
+# This is so your IDE knows about the syntax for fixes and autocomplete.
+$schema: https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json
+
+# The human readable name.
+name: Mytheme Heading
+
+# Status can be: "experimental", "stable", "deprecated", "obsolete".
+status: experimental
+
+# Schema for the props. We support www.json-schema.org. Learn more about the
+# syntax there.
+props:
+  type: object
+  # If your component has required properties, you list them here.
+  required:
+    - title
+    - html_tag
+  properties:
+    # The key is the name of the variable in the template.
+    # You can add a human-readable name to your props.
+    title:
+      type: string
+      title: Heading Text
+      default: "Default Heading Title"
+      examples: 
+        - Heading goes here
+    html_tag:
+      type: string
+      title: HTML tag for heading
+      # Limit the available options by using enums.
+      enum:
+        - h1
+        - h2
+        - h3
+        - h4
+        - h5
+        - h6
+      # Provide a default value
+      default: h2
+      examples: 
+        - h2
+    headingIcon:
+      type: string
+      title: Heading Icon
+      default: bi bi-clock text-info
+      examples:
+        - bi bi-clock
+      description: You can use the Bootstrap Icons from 'https://icons.getbootstrap.com/'
+    iconPosition:
+      type: string
+      title: Heading Icon Position
+      enum:
+        - left
+        - right
+      default: left
+      examples:
+        - left
+    headingLink:
+      type: string
+      format: uri-reference
+      title: Heading Link
+      default: 'https://drupal.org'
+      examples:
+        - 'https://drupal.org'
+    extraClasses:
+      type: string
+      title: Extra Css Classes
+      default: mb-6
+      examples:
+        - mb-6

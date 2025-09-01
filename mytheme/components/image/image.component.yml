@@ -1,0 +1,58 @@
+# This is so your IDE knows about the syntax for fixes and autocomplete.
+$schema: https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json
+
+# The human readable name.
+name: Mytheme Image
+
+# Status can be: "experimental", "stable", "deprecated", "obsolete".
+status: experimental
+
+props:
+  type: object
+  required:
+  - src
+  properties:
+    src:
+      title: Image URL
+      type: string
+      examples:
+        - 'https://placehold.co/480x360?text=Image'
+    alt:
+      title: Alternative text
+      type: string
+      examples:
+        - 'image alt text'
+    width:
+      title: Image width
+      type: integer
+      default: auto
+    height:
+      title: Image height
+      type: integer
+      default: auto
+    imageAlignment:
+      type: string
+      title: Image Alignment
+      enum:
+        - start
+        - center
+        - end
+      default: start
+    responsive:
+      type: boolean
+      title: Responsive image
+      description: (optional) Images in Bootstrap are made responsive with `.img-fluid`. This applies max-width with 100% and height with auto to the image so that it scales with the parent width.
+      default: false
+    thumbnails:
+      type: boolean
+      title: Image thumbnails
+      description: (optional) In addition to Bootstrap border-radius utilities, you can use .img-thumbnail to give an image a rounded 1px border appearance.
+      default: false
+    rounded:
+      type: boolean
+      title: Rounded image
+      default: false
+    extraClasses:
+      type: string
+      title: Extra Css Classes
+      default: 'mb-4'

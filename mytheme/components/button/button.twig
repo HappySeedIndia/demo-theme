@@ -1,0 +1,71 @@
+{#
+/**
+ * @file
+ * Button component.
+ *
+ * Available properties:
+ * - title: Button text.
+ * - html_tag: The HTML tag to use for the button (button | a). Defaults to `button`.
+ * - url: URL link for the button when the HTML tag is an anchor link.
+ * - color: Bootstrap includes several predefined button styles, each serving its own
+ *          semantic purpose, with a few extras thrown in for more control.
+ *          (primary | secondary | success | danger | warning | info | dark | light | link)
+ * - outline: (true|false) In need of a button, but not the hefty background colors they bring?
+ *            Replace the default modifier classes with the `.btn-outline-*` ones to remove all
+ *            background images and colors on any button.
+ * - size: (btn-sm | btn-lg) Bootstrap button size
+ * - disabled: (true|false) Disabled button
+ * - extraClasses: An array of utility classes that can be used to add extra
+ *                    Bootstrap utility classes or custom classes to this component.
+ *
+ */
+#}
+
+{% set html_tag = html_tag ?? 'button' %}
+{% set size = size ? [size] : [] %}
+{% set disabled_classes = disabled ? ['disabled'] : [] %}
+
+{% set button_color = [] %}
+
+{% if color != '' %}
+  {% if outline == true %}
+    {% set button_color = ['btn-outline-' ~ color] %}
+  {% else %}
+    {% set button_color = ['btn-' ~ color] %}
+  {% endif %}
+{% endif %}
+
+{# Only add the JS hook class if the HTML tag is a 'button'. #}
+{% set js_classes = (html_tag == 'button') ? ['js-mytheme-button'] : [] %}
+
+{%
+  set classes = [
+    'btn',
+  ]|merge(button_color)|merge(size)|merge(disabled_classes)|merge(js_classes)
+%}
+
+{% if not attributes %}
+  {% set attributes = create_attribute() %}
+{% endif %}
+
+{# When the HTML tag is an anchor link #}
+{% if html_tag == 'a' %}
+
+  {# When having a value for the URL
+   # Then add the href attribute with url link value.
+   #}
+  {% if url != '' %}
+    {% set attributes = attributes.setAttribute('href', url ) %}
+  {% endif %}
+
+  {% set attributes = attributes.setAttribute('role', 'button' ) %}
+
+  {% if disabled == true %}
+    {% set attributes = attributes.setAttribute('aria-disabled', 'true' ) %}
+    {% set attributes = attributes.setAttribute('tabindex', '-1' ) %}
+  {% endif %}
+{% endif %}
+
+<{{ html_tag }}{{ attributes.addClass(classes).addClass(extraClasses|default([])) }}>{% apply spaceless %}
+  {{ title }}
+{% endapply %}</{{ html_tag }}>

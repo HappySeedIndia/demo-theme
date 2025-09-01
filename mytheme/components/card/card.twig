@@ -1,0 +1,70 @@
+{#
+/**
+ * Card component.
+ *
+ * Props:
+ * - card_border: Adds a border (true|false).
+ * - padded: Adds padding (true|false).
+ * - equal_height: Equal height (true|false).
+ * - media_position: "top" or "bottom".
+ * - card_classes: Extra classes for card wrapper.
+ * - card_media_classes: Extra classes for media wrapper.
+ * - card_content_classes: Extra classes for content wrapper.
+ *
+ * Slots:
+ * - media: Media slot (image/video).
+ * - content: Content slot.
+ */
+#}
+
+{% set card_border = card_border ? ['bordered'] : ['border-0'] %}
+{% set padded = padded ? ['p-4'] : [] %}
+{% set equal_height = equal_height ? ['h-100'] : [] %}
+{% set media_position = media_position ?? 'top' %}
+{% set media_position_classes = media_position == 'bottom' ? ['flex-column-reverse'] : [] %}
+
+{% set card_classes = [
+  'card',
+]|merge(card_border)|merge(padded)|merge(equal_height)|merge(media_position_classes)|merge(card_classes|default([])) %}
+
+{% set media_classes = [
+  'card-img',
+  'card-img-' ~ media_position,
+]|merge(card_media_classes|default([])) %}
+
+{% set content_classes = [
+  'card-content',
+  'card-body',
+]|merge(card_content_classes|default([])) %}
+
+<div{{ create_attribute().addClass(card_classes) }}>
+  {# Media slot #}
+  {% if block('media') is defined and block('media')|render %}
+    <div{{ create_attribute().addClass(media_classes) }}>
+      {{ block('media') }}
+    </div>
+  {% else %}
+    {{ include('mytheme:image', {
+      src: 'https://placehold.co/480x360?text=Image',
+      alt: 'Placeholder image',
+    }) }}
+  {% endif %}
+
+  {# Content slot #}
+  <div{{ create_attribute().addClass(content_classes) }}>
+    {% if block('content') is defined and block('content')|render %}
+      {{ block('content') }}
+    {% else %}
+      {{ include('mytheme:heading', {
+        title: 'Default Heading Title',
+        html_tag: 'h4',
+        extraClasses: 'mt-3'
+      }) }}
+
+      {{ include('mytheme:text', {
+        content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+        extraClasses: 'mt-3',
+      }) }}
+    {% endif %}
+  </div>
+</div>
