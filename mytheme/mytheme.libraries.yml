@@ -22,13 +22,13 @@ bootstrap:
   dependencies:
     - core/jquery
 
-# Theme speicfic global CSS
+# Theme specific global CSS
 global-styling:
   css:
     theme:
       assets/css/style.css: {}
 
-# Theme speicfic global JS
+# Theme specific global JS
 global-scripts:
   js: 
     assets/js/theme.js: {}
