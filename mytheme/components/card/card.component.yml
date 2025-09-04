@@ -41,12 +41,8 @@ props:
       title: Content Utility Classes
       description: Use to add extra Bootstrap utility classes for the Card Content region wrapper. E.g. `w-75 mb-3 overflow-y-hidden`  ( Do not add `card-body`).'
 slots:
-  # The key is the name of the slot. In your template you will use 
-  # {% block media %}.
   media:
-    # A human-readable name.
     title: 'Card Media'
-    # A description.
     description: 'The media image/video slot for the card.'
     examples:
       - <p>This is Media section, you can place Image component in this section.</p>
