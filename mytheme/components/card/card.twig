@@ -39,9 +39,9 @@
 
 <div{{ create_attribute().addClass(card_classes) }}>
   {# Media slot #}
-  {% if media is defined and media|render %}
+  {% if block('media') is defined and block('media')|render %}
     <div{{ create_attribute().addClass(media_classes) }}>
-      {% block media %}{% endblock %}
+      {{ block('media') }}
     </div>
   {% else %}
     {{ include('mytheme:image', {
@@ -52,8 +52,8 @@
 
   {# Content slot #}
   <div{{ create_attribute().addClass(content_classes) }}>
-    {% if content is defined and content|render %}
-      {% block content %}{% endblock %}
+    {% if block('content') is defined and block('content')|render %}
+      {{ block('content') }}
     {% else %}
       {{ include('mytheme:heading', {
         title: 'Default Heading Title',
