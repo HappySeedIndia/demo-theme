@@ -29,9 +29,9 @@ status: experimental
 props:
   type: object
   # If your component has required properties, you list them here.
+  # required means must be passed, regardless of default.
   required:
     - title
-    - html_tag
   properties:
     # The key is the name of the variable in the template.
     # You can add a human-readable name to your props.
@@ -53,6 +53,8 @@ props:
         - h5
         - h6
       # Provide a default value
+      # default only applies when not required and not explicitly provided.
+      # The default: values in component.yml are used for UI tools like Storybook or XB
       default: h2
       examples: 
         - h2
