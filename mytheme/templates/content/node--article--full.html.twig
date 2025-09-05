@@ -9,7 +9,6 @@
   {# Image #}
   {{ include('mytheme:image', {
     src: file_url(node.field_image.entity.fileuri),
-    alt: node.field_image.alt,
     responsive: true,
     extraClasses: 'my-3'
   }, with_context = false) }}
