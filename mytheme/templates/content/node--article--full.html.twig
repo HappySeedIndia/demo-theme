@@ -1,0 +1,23 @@
+<article>
+{# Title #}
+  {{ include('mytheme:heading', {
+    title: label,
+    html_tag: 'h2',
+    extraClasses: 'text-primary',
+  }, with_context = false) }}
+
+  {# Image #}
+  {{ include('mytheme:image', {
+    src: file_url(node.field_image.entity.fileuri),
+    alt: node.field_image.alt,
+    responsive: true,
+    extraClasses: 'my-3'
+  }, with_context = false) }}
+
+  {# Body #}
+  
+  {{ include('mytheme:text', {
+    content: content.body,
+    extraClasses: 'p-4',
+  }, with_context = false) }}
+</article>

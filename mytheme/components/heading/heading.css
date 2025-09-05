@@ -1,3 +1,8 @@
 .text-custom {
   color: #23ccfb;
 }
+
+h1 {
+  color: blueviolet !important;
+  margin-bottom: 20px;
+}

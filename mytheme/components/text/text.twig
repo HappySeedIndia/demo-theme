@@ -14,6 +14,10 @@
  */
 #}
 
-<p{{ attributes.addClass(classes).addClass(extraClasses|default([])) }}>
+{% set classes = [
+  'text-component',
+] %}
+
+<div{{ attributes.addClass(classes).addClass(extraClasses|default([])) }}>
 {{ content }}
-</p>
+</div>

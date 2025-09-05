@@ -11,12 +11,16 @@ status: experimental
 # Prop Types
 # String: Represents textual data.
 # Example: {"title": "My Component Title"}
+
 # Number: Represents numerical data, including integers and floats.
 # Example: {"count": 10, "price": 9.99}
+
 # Boolean: Represents true/false values.
 # Example: {"isActive": true}
+
 # Array: Represents an ordered list of values, which can be of any data type.
 # Example: {"items": ["item1", "item2"]}
+
 # Object: Represents a collection of key-value pairs, where values can be of any data type, including nested objects.
 # Example: {"user": {"name": "John Doe", "age": 30}}
 
