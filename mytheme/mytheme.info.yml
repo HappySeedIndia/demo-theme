@@ -54,7 +54,7 @@ regions:
 # available to every page presented by the theme
 libraries:
   - mytheme/bootstrap
-  # - mytheme/bootstrap_icons
+  - mytheme/bootstrap_icons
   - mytheme/global-styling
   - mytheme/global-scripts
 

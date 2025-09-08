@@ -1,0 +1,19 @@
+$schema: https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json
+name: Mytheme Image Card
+status: experimental
+description: 'Card component with media at the side.'
+group: Cards
+props:
+  type: object
+  properties: {}
+slots:
+  media:
+    title: 'Card Media'
+    description: 'The media image/video slot for the card.'
+    examples:
+      - <p>This is Media section, you can place Image component in this section.</p>
+  content:
+    title: 'Card Content'
+    description: 'The content slot for the card.'
+    examples:
+      - <p>This is Content section, you can place Heading, Text, Button, Badge components in this section.</p>

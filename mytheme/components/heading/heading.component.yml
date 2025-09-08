@@ -54,7 +54,7 @@ props:
         - h6
       # Provide a default value
       # default only applies when not required and not explicitly provided.
-      # The default: values in component.yml are used for UI tools like Storybook or XB
+      # The default: values in component.yml are used for UI tools like Storybook not in twig.
       default: h2
       examples: 
         - h2
