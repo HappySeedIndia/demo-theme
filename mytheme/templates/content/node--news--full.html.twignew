@@ -1,0 +1,21 @@
+{# Demo for with_context true & false #}
+
+{% set html_tag = 'h3' %}
+{% set headingIcon = 'bi bi-star' %}
+{% set iconPosition = 'right' %}
+{% set extraClasses = 'parent-class' %}
+{# {% set label = 'Parent Label' %} #}
+
+{# Include with_context = true #}
+<h2>Include with_context = true</h2>
+{{ include('mytheme:heading', {
+  title: label,
+}, with_context = true) }}
+
+{# Include with_context = false #}
+<h2>Include with_context = false</h2>
+{{ include('mytheme:heading', {
+  title: label,
+  extraClasses: 'text-danger', 
+  extraClasses: 'text-success',   # collide with parent "extraClasses"
+}, with_context = false) }}

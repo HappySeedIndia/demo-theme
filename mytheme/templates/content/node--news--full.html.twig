@@ -72,6 +72,8 @@
     equal_height: true,
   } %}
     {% block media %}
+    {# Field should be image field not media field. #}
+    {# For Media Field we need to fetch url in some different way. #}
       {{ include('mytheme:image', {
         src: file_url(node.field_news_image.entity.fileuri),
         alt: node.field_news_image.alt,
